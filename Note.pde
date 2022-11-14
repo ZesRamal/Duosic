@@ -59,4 +59,8 @@ class Note {
     void setPosY(float y) {
         posY = y;
     }
+    
+    void setText(String texto) {
+        t = texto;
+    }
 }

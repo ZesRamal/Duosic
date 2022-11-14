@@ -14,8 +14,8 @@ void setup() {
     loadAudio();
     loadImages();
     frameRate(fr);
-    size(800,600);
-    // fullScreen();
+    size(718, 512);
+    //fullScreen();
     createLevels();
     createButtons();
     windowNumber = 0;

@@ -19,7 +19,7 @@ PImage good;
 PImage bad;
 PImage miss;
 
-SoundFile menuMusic, beneathTheMask, mirrorTemple, sweden, s_button;
+SoundFile menuMusic, beneathTheMask, mirrorTemple, sweden, s_button,cheer,clap;
 Sound s = new Sound(this);
 
 // Create/Load Functions
@@ -45,8 +45,8 @@ void createButtons() {
 void createLevels() {
     levels = new Level[3];
     levels[0] = new Level(150, 0);
-    levels[1] = new Level(200, 1);
-    levels[2] = new Level(500, 2);
+    levels[1] = new Level(1000, 1);
+    levels[2] = new Level(1000, 2);
 }
 
 void loadImages() {
@@ -102,6 +102,8 @@ void loadAudio() {
     mirrorTemple = new SoundFile(this, sketchPath("Sounds/MirrorTemple.wav"));
     sweden = new SoundFile(this, sketchPath("Sounds/Sweden.wav"));
     s_button = new SoundFile(this, sketchPath("Sounds/ButtonEffectLow.wav"));
+    cheer = new SoundFile(this,sketchPath("Sounds/Cheer.wav"));
+    clap = new SoundFile(this,sketchPath("Sounds/Clap.wav"));
 }
 
 void menuMusicSystem() {
@@ -122,6 +124,11 @@ void menuMusicSystem() {
         beneathTheMask.stop();
         sweden.stop();
         mirrorTemple.stop();
+    }
+    
+    if (windowNumber != 4) {
+        clap.stop();
+        cheer.stop();
     }
 }
 // Windows Functions
@@ -237,47 +244,47 @@ void levelCompleted() {
 void scoreRank() {
     switch(levelNumber) {
         case 0 :
-            if (score > 1200) {
+            if (score > 20000) {
                 image(rankS, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 1000) {
+            } else if (score > 17600) {
                 image(rankA, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 800) {
+            } else if (score > 15400) {
                 image(rankB, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 600) {
+            } else if (score > 13200) {
                 image(rankC, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 400) {
+            } else if (score > 11000) {
                 image(rankD, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score < 400) {
+            } else{
                 image(rankF, round(resizeX(1000)), round(resizeY(550)));
             }
             break;	
         case 1 :
-            if (score > 1200) {
+            if (score > 42000) {
                 image(rankS, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 1000) {
+            } else if (score > 36000) {
                 image(rankA, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 800) {
+            } else if (score > 27000) {
                 image(rankB, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 600) {
+            } else if (score > 18000) {
                 image(rankC, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 400) {
+            } else if (score > 9000) {
                 image(rankD, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score < 400) {
+            } else {
                 image(rankF, round(resizeX(1000)), round(resizeY(550)));
             }
             break;	
         case 2 :
-            if (score > 1200) {
+            if (score > 16000) {
                 image(rankS, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 1000) {
+            } else if (score > 14000) {
                 image(rankA, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 800) {
+            } else if (score > 12000) {
                 image(rankB, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 600) {
+            } else if (score > 10000) {
                 image(rankC, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score > 400) {
+            } else if (score > 8000) {
                 image(rankD, round(resizeX(1000)), round(resizeY(550)));
-            } else if (score < 400) {
+            } else {
                 image(rankF, round(resizeX(1000)), round(resizeY(550)));
             }
             break;	
